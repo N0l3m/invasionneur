@@ -84,7 +84,6 @@ def fNouvelle_partie(pCanvas):
 
     global liste_alien, liste_block, vaisseau_jeu
 
-    for alien in liste_alien:
-        liste_alien.remove(alien)
-
+    liste_alien = []
+    liste_block = []
     vaisseau_jeu = pCanvas.create_rectangle(325, 525, 325+50, 525+50, fill='white')
