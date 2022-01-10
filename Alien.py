@@ -56,6 +56,7 @@ class Alien():
     def fHit(self, pDegat, indice):
         self.vie -= pDegat
         if self.vie <= 0:
+            self.vie.fMaj_vies()
             self.canvas.delete(self.img)
             self.list_alien.pop(indice)
 
