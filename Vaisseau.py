@@ -4,7 +4,7 @@ import Alien as a
 
 class Vaisseau():
 
-    def __init__(self, pX_vaisseau, pY_vaisseau, pCanvas, liste_alien, pLst_protection, pScore_label):
+    def __init__(self, pX_vaisseau, pY_vaisseau, pCanvas, liste_alien, pLst_protection, pScore_label, pVie_label):
 
         self.liste_protection = pLst_protection
 
@@ -20,6 +20,7 @@ class Vaisseau():
         self.force = 5
         self.temps_de_recharge = 2000
         self.vie = 3
+        self.vie_label = pVie_label
         self.vitesse_tir = 0.2
         self.reload = True
         self.balle_list = []
@@ -51,14 +52,15 @@ class Vaisseau():
 
     def fHit(self, pDegat):
         self.vie -= pDegat
+        self.vie_label.config(text = self.vie)
         if self.vie == 0:
             self.canvas.delete(self.img)
 
     def fMaj_score(self):
         self.score_label.config(text = self.score)
     
-    def fMaj_vies(self):
-        self.vie_label.config(text = self.vie)
+    #def fMaj_vies(self):
+    #    self.vie_label.config(text = self.vie)
 
     def fCollision_alien(self):
         for alien in self.list_alien:

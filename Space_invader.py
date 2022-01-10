@@ -48,6 +48,14 @@ label_score_titre.place(x=5,y=5)
 label_score_chiffre = Label(fen, text ="0")
 label_score_chiffre.place(x=100,y=5)
 
+#label pour le les vies:
+label_vies_titre = Label(fen, text = "Nombre de vies")
+label_vies_titre.place(x=500,y=5)
+
+#initialisation des vies a 3:
+label_vies_chiffre = Label(fen, text = "3")
+label_vies_chiffre.place(x=600,y=5)
+
 #le game_on permet que le bouton nouvelle partie ne puisse etre actionnee une seule fois a la fois
 game_on = "true"
 
@@ -63,7 +71,7 @@ Bouton_Nvlle_Partie.place(x=725,y=500)
 vaisseau_menu = canvas.create_rectangle(325, 525, 325+50, 525+50, fill='white')
 
 #bouton pour lancer le jeu:
-bouton_play = Button(fen, text = 'Play', command = lambda: (fPlay(vaisseau_menu, bouton_play, canvas, fen, label_score_chiffre)), width=15, height= 5, foreground="black")
+bouton_play = Button(fen, text = 'Play', command = lambda: (fPlay(vaisseau_menu, bouton_play, canvas, fen, label_score_chiffre, label_vies_chiffre)), width=15, height= 5, foreground="black")
 bouton_play.place(x=305, y=300)
 
 fen.mainloop()

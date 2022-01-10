@@ -5,7 +5,7 @@ import Protection as pr
 import Partie as pa
 
 #fonction qui lance le jeu
-def fPlay(pVaisseau, pBouton, pCanvas, pFen, pScore):
+def fPlay(pVaisseau, pBouton, pCanvas, pFen, pScore, pVie):
 
     global liste_alien, liste_block, vaisseau_jeu
 
@@ -27,7 +27,7 @@ def fPlay(pVaisseau, pBouton, pCanvas, pFen, pScore):
     liste_block = []
 
     #creation de l'objet vaisseau
-    vaisseau_jeu = v.Vaisseau(325, 525, pCanvas, liste_alien, liste_block, pScore)
+    vaisseau_jeu = v.Vaisseau(325, 525, pCanvas, liste_alien, liste_block, pScore, pVie)
 
     #creation des alien de maniere ordonnée avec la classe calien:
     nombre_alien_derniere_ligne = nb_alien%7 
@@ -66,7 +66,7 @@ def fPlay(pVaisseau, pBouton, pCanvas, pFen, pScore):
                 liste_block.append(pr.Protection(100 + 200*B+20*b,400+l*20,pCanvas, liste_block))
 
     #parametres de partie (gagne,perdu,score etc)
-    partie = pa.Partie(liste_alien, vaisseau_jeu, pCanvas, pFen, pScore)
+    partie = pa.Partie(liste_alien, vaisseau_jeu, pCanvas, pFen)
 
 
     #detection des touches espaces et fleches gaucche et droite pour le tir et le mouvement du vaisseau:
