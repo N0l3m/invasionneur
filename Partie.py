@@ -14,7 +14,6 @@ class Partie():
         self.fMaj_score()
 
     def fMaj_score(self):
-        
         self.score.config(text = 10*self.vaisseau.nb_alien_mort)
 
     def fInit_score(self):
@@ -24,8 +23,3 @@ class Partie():
     def fFin_partie(self):
         if self.lst_alien == [] or self.vaisseau.vie <= 0:
             self.on_game = False
-
-    
-    
-
-

@@ -66,7 +66,7 @@ def fPlay(pVaisseau, pBouton, pCanvas, pFen, pScore, pVie):
                 liste_block.append(pr.Protection(100 + 200*B+20*b,400+l*20,pCanvas, liste_block))
 
     #parametres de partie (gagne,perdu,score etc)
-    partie = pa.Partie(liste_alien, vaisseau_jeu, pCanvas, pFen)
+    partie = pa.Partie(liste_alien, vaisseau_jeu, pCanvas, pFen, pScore)
 
 
     #detection des touches espaces et fleches gaucche et droite pour le tir et le mouvement du vaisseau:
