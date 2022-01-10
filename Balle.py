@@ -47,7 +47,6 @@ class Balle():
             if self.vaisseau.y <= self.y <= self.vaisseau.y+self.vaisseau.dimension[1]:
                 if self.vaisseau.x <= self.x <= self.vaisseau.x+self.vaisseau.dimension[0]:
                     self.canvas.delete(self.img)
-                    self.vaisseau.fHit(self.force)
                     self.bouge = False
                     self.lst_balle.remove(self)
 
@@ -78,7 +77,7 @@ class Balle():
                         self.vaisseau.fMaj_score()
 
             for i,block in enumerate(self.liste_protection):
-                if block.y <= self.y <= block.y+block.dimension[1]:   
+                if block.y + self.dimension[1]<= self.y <= block.y + 2*self.dimension[1]:   
                     if block.x <= self.x <= block.x+block.dimension[0]:
                         self.canvas.delete(self.img)
                         self.bouge = False
@@ -89,9 +88,6 @@ class Balle():
         if self.y>=600 or self.y<=0:
             self.bouge = False
             self.lst_balle.remove(self)
-
-    #fonction qui lance le tire special de l'alien de niveau 2
-    
     
     #fonction qui gere le mvmt des trois balles apres le splir de la balle speciale
     def fMvmt_special(self):
