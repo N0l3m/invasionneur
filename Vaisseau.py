@@ -59,8 +59,8 @@ class Vaisseau():
     def fMaj_score(self):
         self.score_label.config(text = self.score)
     
-    #def fMaj_vies(self):
-    #    self.vie_label.config(text = self.vie)
+    def fMaj_vies(self):
+        self.vie_label.config(text = self.vie)
 
     def fCollision_alien(self):
         for alien in self.list_alien:
